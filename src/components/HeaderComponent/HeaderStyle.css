@@ -1,0 +1,14 @@
+.bgGreen {
+  background-color: teal;
+  text-align: center;
+  vertical-align: middle;
+  color: azure;
+  width: 100%;
+  font-weight: bolder;
+  font-size: xx-large;
+  height: 200px;
+  line-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
