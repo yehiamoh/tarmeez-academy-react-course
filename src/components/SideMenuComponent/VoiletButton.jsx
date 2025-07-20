@@ -1,13 +1,18 @@
 import React from "react";
 import "./VoiletButtonStyle.css";
+//conditional Rendering
 const VoiletButton = ({ children = "", title, icon = "" }) => {
   return (
     <div>
-      <button className="bgVoilet">
-        <div>{title}</div>
-        <div>{icon}</div>
-        <div>{children}</div>
-      </button>
+      {title === "" || title === null ? (
+        <div></div>
+      ) : (
+        <button className="bgVoilet">
+          <div>{title}</div>
+          <div>{icon}</div>
+          <div>{children}</div>
+        </button>
+      )}
     </div>
   );
 };

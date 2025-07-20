@@ -2,31 +2,38 @@ import React from "react";
 import VoiletButton from "./VoiletButton";
 import "./SideMenuStyle.css";
 const SideMenu = () => {
+  const ButtonList = [
+    {
+      id: 1,
+      title: "New 🤘🤘🤘",
+      children: (
+        <div>
+          <h1>😞😞😞😞</h1>
+        </div>
+      ),
+    },
+    { id: 2, title: "Most Read", icons: "👌👌" },
+    {
+      id: 3,
+      title: "Intersting News",
+      children: (
+        <div>
+          <h1>🤣🤣🤣🤣🤣</h1>
+        </div>
+      ),
+    },
+  ];
   return (
     <div className="sideMenu">
-      <VoiletButton title="جديده 🤘🤘" />
-      <VoiletButton title="الاكثر قراءه">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRC6ISUMAqfrftJa3ukCD4OsJ-hCLxfuB1Yw&s"
-          alt="image"
-          style={{
-            width: "50px",
-            height: "50px",
-          }}
+      {ButtonList.map((btn) => (
+        <VoiletButton
+          key={btn.id}
+          title={btn.title}
+          icon={btn.icons}
+          children={btn.children}
         />
-      </VoiletButton>
-      <VoiletButton title="مقالات مميزه" icon="👌👌👌">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtDZ3-Yw3bgKq-QSpxuvlERsUfa77gz2JJcw&s"
-          alt="image"
-          style={{
-            width: "50px",
-            height: "50px",
-          }}
-        />
-      </VoiletButton>
+      ))}
     </div>
   );
 };
-
 export default SideMenu;
