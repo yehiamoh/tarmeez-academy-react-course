@@ -6,6 +6,8 @@ const MyForm = () => {
     email: "",
     generalInfo: "",
     isStudent: false,
+    country: "",
+    status: "",
   });
   return (
     <form
@@ -30,9 +32,7 @@ const MyForm = () => {
           setForm({ ...form, name: event.target.value });
         }}
       />
-
       <hr />
-
       <label htmlFor="">Email : </label>
       <input
         value={form.email}
@@ -42,9 +42,7 @@ const MyForm = () => {
           setForm({ ...form, email: event.target.value });
         }}
       />
-
       <hr />
-
       <label htmlFor="">Are You A Student</label>
       <input
         type="checkbox"
@@ -53,9 +51,41 @@ const MyForm = () => {
           setForm({ ...form, isStudent: e.target.checked });
         }}
       />
-
       <hr />
-
+      <select
+        value={form.country}
+        onChange={(e) => {
+          setForm({ ...form, country: e.target.value });
+        }}
+      >
+        <option>KSA</option>
+        <option>Egypt</option>
+        <option>Syria</option>
+      </select>
+      <hr />
+      <div>
+        <input
+          type="radio"
+          name="status"
+          checked={form.status === "student"}
+          value="student"
+          onChange={(e) => {
+            setForm({ ...form, status: e.target.value });
+          }}
+        />
+        Student
+        <input
+          type="radio"
+          name="status"
+          checked={form.status === "teacher"}
+          value="teacher"
+          onChange={(e) => {
+            setForm({ ...form, status: e.target.value });
+          }}
+        />
+        Teacher
+      </div>
+      <hr />
       <label htmlFor="">General information</label>
       <textarea
         value={form.generalInfo}
